@@ -31,11 +31,15 @@ footer {
 .empty {
     background-color: white;
     border: 1px dashed black;
+    width: 14px;
+    height: 14px;
 }
 
 .mouseover {
     background-color: black;
     border: 1px solid black;
+    width: 14px;
+    height: 14px;
 }
 
 header {
