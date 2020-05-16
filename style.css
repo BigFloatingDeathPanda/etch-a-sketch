@@ -7,6 +7,8 @@ footer {
     margin: 0 auto;
     display: block;
     font-size: 10px;
+    position: absolute;
+    bottom: 0px;
 }
 
 #gridContainer {
@@ -19,7 +21,6 @@ footer {
 #row {
     display: flex;
     flex-direction: row;
-
 }
 
 .column {
@@ -47,8 +48,7 @@ header {
 
 h1 {
     text-align: center;
-    margin: 0;
-    
+    margin: 0; 
 }
 
 #widthInput {
@@ -62,12 +62,10 @@ h1 {
     display: flex;
     flex-direction: column;
     margin: 8px;
-    
 }
 
 #boxwidth {
     font-size: 14px;
-    
 }
 
 button {
