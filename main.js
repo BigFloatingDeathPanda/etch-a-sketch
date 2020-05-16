@@ -28,12 +28,14 @@ function createGrid(GridRows, GridColumns) {
             const divCol = document.createElement("div");
             //divCol.textContent = `r${i}, c${j}`;
             //divCol.classList.add("column");
+            divCol.classList.remove("mouseover");
             divCol.classList.add("empty");
             divRow.appendChild(divCol);
 
         }
     gridContainer.appendChild(divRow);
     }
+    return;
 };
 
 const clickButton = document.getElementById("resetButton").addEventListener("click", runResetFunction);
@@ -44,13 +46,32 @@ function runResetFunction() {
     const newWidth = document.getElementById("boxwidth").value;
     const newHeight = document.getElementById("boxheight").value;
     createGrid(newHeight, newWidth);
-}
 
-const switchColor = document.querySelectorAll("empty");
+
+
+
+
+    
+}
+createGrid(16, 16); 
+
+
+const switchColor = document.querySelectorAll(".empty");
+console.log(switchColor.length);
+console.log(switchColor);
+for (let i = 0; i<switchColor.length; i++) {
+    switchColor[i].addEventListener("mouseover", () => {
+        switchColor[i].classList.remove("empty");
+        switchColor[i].classList.add("mouseover");
+    });
+};
+
+
+
 
 //ToDo right here, figure out how to mouse over and change class of anything mousedover.  I think you need to select all and use a loop
 // but I don't quite remember why.  Check TOP DOM manipulation for ideas and details.  I pretty much know what I want, I just need
 //JS to understand what I wants
 
-window.onload = createGrid(16, 16);      
+     
     
