@@ -46,25 +46,31 @@ function runResetFunction() {
     const newWidth = document.getElementById("boxwidth").value;
     const newHeight = document.getElementById("boxheight").value;
     createGrid(newHeight, newWidth);
-
+    runSwitchColor();
 
 
 
 
     
 }
-createGrid(16, 16); 
 
 
-const switchColor = document.querySelectorAll(".empty");
-console.log(switchColor.length);
-console.log(switchColor);
-for (let i = 0; i<switchColor.length; i++) {
-    switchColor[i].addEventListener("mouseover", () => {
-        switchColor[i].classList.remove("empty");
-        switchColor[i].classList.add("mouseover");
-    });
+let switchColor = document.querySelectorAll(".empty");
+
+function runSwitchColor() {
+    switchColor = document.querySelectorAll(".empty");
+    console.log(switchColor.length);
+    console.log(switchColor);
+    for (let i = 0; i<switchColor.length; i++) {
+        switchColor[i].addEventListener("mouseover", () => {
+            switchColor[i].classList.remove("empty");
+            switchColor[i].classList.add("mouseover");
+        });
+    };
 };
+
+createGrid(40, 40); 
+runSwitchColor();
 
 
 
