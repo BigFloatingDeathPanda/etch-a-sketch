@@ -26,7 +26,7 @@ function createGrid(GridRows, GridColumns) {
     
         for (let j = 1; j<=GridColumns; j++) {
             const divCol = document.createElement("div");
-            divCol.textContent = `r${i}, c${j}`;
+            //divCol.textContent = `r${i}, c${j}`;
             //divCol.classList.add("column");
             divCol.classList.add("empty");
             divRow.appendChild(divCol);
