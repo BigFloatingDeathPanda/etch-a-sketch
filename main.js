@@ -26,7 +26,7 @@ function createGrid(GridRows, GridColumns) {
     
         for (let j = 1; j<=GridColumns; j++) {
             const divCol = document.createElement("div");
-            divCol.textContent = `row${i}, column${j}`;
+            divCol.textContent = `r${i}, c${j}`;
             //divCol.classList.add("column");
             divCol.classList.add("empty");
             divRow.appendChild(divCol);
@@ -36,31 +36,21 @@ function createGrid(GridRows, GridColumns) {
     }
 };
 
-const clickButton = document.getElementById("resetButton");
-clickButton.addEventListener("click", runResetFunction);
+const clickButton = document.getElementById("resetButton").addEventListener("click", runResetFunction);
 
 function runResetFunction() {
     const gridContainer = document.getElementById("gridContainer");
     gridContainer.innerHTML = " ";
-    const newSize = getNewGame();
-    // this doesn't work. I mean, it sets the width, but now how you want it to... gridContainer.setAttribute("width", `${10*newSize}px`);
-    createGrid(newSize, newSize);
+    const newWidth = document.getElementById("boxwidth").value;
+    const newHeight = document.getElementById("boxheight").value;
+    createGrid(newHeight, newWidth);
 }
 
-function getNewGame() {
-    return prompt(`What Size per Edge?`);
-}
+const switchColor = document.querySelectorAll("empty");
 
-const switchColor = document.getElementsByClassName("empty");
 //ToDo right here, figure out how to mouse over and change class of anything mousedover.  I think you need to select all and use a loop
 // but I don't quite remember why.  Check TOP DOM manipulation for ideas and details.  I pretty much know what I want, I just need
 //JS to understand what I wants
 
-
-
-
-
-
-
-createGrid(16, 16);        
+window.onload = createGrid(16, 16);        
     

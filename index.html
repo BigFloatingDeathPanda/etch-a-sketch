@@ -8,6 +8,23 @@
 <body>
     <header>
         <h1>Etch-A-Ma-Sketch</h1>
+        <div id="widthInput">
+            <div class="headerCol">
+                Start Over with New Dimensions:
+                <button id="resetButton">Reset and Choose Grid Size</button>
+            </div>
+            <div></div>
+            <div class="headerCol">
+                <label for="boxwidth">Width: </label>
+                <input type="text" id="boxwidth" name="width">
+
+                <label for="boxheight">Height: </label>
+                <input type="text" id="boxheight" name="height">
+            </div>
+            
+
+        </div>
+        <!-- need two text boxes and a button here to get size of board.  On Button click, run function to create board.  Default to 16x16 on page load-->
     </header>
 
     <!-- this container intentially left blank.  It will be created on the fly in JS-->
@@ -15,12 +32,12 @@
     </div>
 
 
-    <button id="resetButton">Reset and Choose Grid Size</button>
+    
     <footer>
         Etch Your Sketch
     </footer>
 
-    <script src="main.js"></script>
+    <script src="main.js" defer></script>
 
 </body>
 </html>
