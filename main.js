@@ -52,5 +52,5 @@ const switchColor = document.querySelectorAll("empty");
 // but I don't quite remember why.  Check TOP DOM manipulation for ideas and details.  I pretty much know what I want, I just need
 //JS to understand what I wants
 
-window.onload = createGrid(16, 16);        
+window.onload = createGrid(16, 16);      
     
