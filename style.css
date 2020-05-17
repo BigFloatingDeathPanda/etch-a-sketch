@@ -37,7 +37,7 @@ footer {
 
 .empty {
     background-color: white;
-    border: 1px dashed lightgray;
+    border: none;
     align-items: stretch;
     flex-grow: 1;
     height: 100%;
@@ -45,7 +45,7 @@ footer {
 
 .mouseover {
     /*background-color: black;*/
-    border: 1px solid black;
+    border: none;
     flex-grow: 1;
 }
 
@@ -82,7 +82,7 @@ h1 {
     margin-right: 50px;
 }
 
-#colorSelector {
+.colorSelector {
     
 }
 
