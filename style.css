@@ -13,35 +13,41 @@ footer {
 
 #gridContainer {
     display: flex;
-    flex: 1;
+    flex: auto;
     flex-direction: column;
     border: 1px solid black;
+    margin: 0 auto;
+    width: 600px;
+    height: 600px;
 }
 
 #row {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    height: 100%;
 }
 
 .column {
     display: flex;
     flex-direction: column;
-    justify-content: center;;
+    justify-content: center;
+    height: 100%
+
 }
 
 .empty {
     background-color: white;
-    border: 1px dashed black;
-    width: 14px;
-    height: 14px;
+    border: 1px dashed lightgray;
+    align-items: stretch;
+    flex-grow: 1;
+    height: 100%;
 }
 
 .mouseover {
     background-color: black;
     border: 1px solid black;
-    width: 14px;
-    height: 14px;
+    flex-grow: 1;
 }
 
 header {

@@ -1,20 +1,3 @@
-/*
-//Need, i loops for columns, j loop for rows
-
-thinking, need append child option for each
-
-so, make a column, loop through rows in the column.  To test, assign letters to each "a,b,c, etc"
-
-each row/column needs an ID or CLASS or something.  Column i row j or something.
-
-Start with creating the grid itself.  Then, move on to hover features later.
-
-*/
-
-
-
-
-
 function createGrid(GridRows, GridColumns) {
 
     let gridContainer = document.getElementById("gridContainer");
@@ -61,16 +44,51 @@ function runSwitchColor() {
     switchColor = document.querySelectorAll(".empty");
     console.log(switchColor.length);
     console.log(switchColor);
+    
+    let inputType = document.getElementById("mouse").checked;
+    if (inputType) {
+        inputType = "mouseover";
+    } else {
+        inputType = "click";
+    }    
+    
     for (let i = 0; i<switchColor.length; i++) {
-        switchColor[i].addEventListener("mouseover", () => {
+        
+        //if (inputType == "mouseover") {
+       //     switchColor[i].removeEventListener("click", ());
+       // } else {
+       //     switchColor[i].removeEventListener("mouseover", ());
+       // };
+        
+        
+        //console.log(switchColor[i]);
+        //switchColor[i].addEventListener("click", classChanger(i, switchColor));
+        
+        switchColor[i].addEventListener(inputType, () => {
             switchColor[i].classList.remove("empty");
             switchColor[i].classList.add("mouseover");
         });
     };
 };
 
-createGrid(40, 40); 
+function classChanger(i, switchColor) {
+    console.log(switchColor[i]);
+    switchColor[i].classList.remove("empty");
+    switchColor[i].classList.add("mouseover");
+    return switchColor[i].classList;
+};
+
+
+createGrid(10, 10); 
 runSwitchColor();
+
+const radioListener = document.getElementsByName("inputType");
+
+for (let i = 0; i<radioListener.length; i++) {
+    radioListener[i].addEventListener("click", () => {
+        runSwitchColor();
+    });
+};
 
 
 
