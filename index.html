@@ -11,25 +11,51 @@
         <div id="widthInput">
             <div class="headerCol">
                 Start Over with New Dimensions - 
-                <button id="resetButton">Reset and Choose Grid Size</button>
-            </div>
-            <div></div>
-            <div class="headerCol">
                 <label for="boxwidth">Number of Boxes along an Edge: </label>
                 <input type="text" id="boxwidth" name="width" placeholder="20">
-
-                <!--<label for="boxheight">Height: </label>
-                <input type="text" id="boxheight" name="height">-->
+                <button id="resetButton">Reset and Choose Grid Size</button>
             </div>
+
             <div id="radioButtons">
                 Input Style: <br>
                 <input type="radio" id="mouse" name="inputType" value="mouse" checked>
                 <label for="mouse">Auto</label><br>
                 <input type="radio" id="click" name="inputType" value="click">
-                <label for="female">Click</label><br>
+                <label for="click">Click</label><br>
                 (Not Currently Functional)
             </div>
+
+            <div class="colorSelector">
+                Color Options: <br>
+                <input type="radio" id="blackColor" name="colorType" value="black" checked>
+                <label for="blackColor">Black</label><br>
+                <input type="radio" id="colorful" name="colorType" value="colorful">
+                <label for="colorful">Colorful</label><br>
+                <input type="radio" id="blueish" name="colorType" value="blueish">
+                <label for="blueish">Blueish</label><br>
+                <input type="radio" id="orangeish" name="colorType" value="orangeish">
+                <label for="orangeish">Orangeish</label><br>
+                <input type="radio" id="pinkish" name="colorType" value="pinkish">
+                <label for="pinkish">Pinkish</label><br>
+                <input type="radio" id="gray" name="colorType" value="gray">
+                <label for="gray">Grayscale</label><br>
+            </div>
             
+            <div class="colorSelector">
+                <br>
+                <input type="radio" id="yellow" name="colorType" value="yellow">
+                <label for="yellow">Yellowish</label><br>
+                <input type="radio" id="green" name="colorType" value="green">
+                <label for="green">Greenish</label><br>
+                <input type="radio" id="red" name="colorType" value="red">
+                <label for="red">Redish</label><br>
+                <input type="radio" id="warm" name="colorType" value="warm">
+                <label for="warm">Warm Palette</label><br>
+                <input type="radio" id="cool" name="colorType" value="cool">
+                <label for="cool">Cool Palette</label><br>
+                <input type="radio" id="pastel" name="colorType" value="pastel">
+                <label for="pastel">Pastel</label><br>
+            </div>
 
         </div>
         <!-- need two text boxes and a button here to get size of board.  On Button click, run function to create board.  Default to 16x16 on page load-->
@@ -45,7 +71,7 @@
         Etch Your Sketch
     </footer>
 
-    <script src="main.js" defer></script>
+    <script src="main2.js" defer></script>
 
 </body>
 </html>

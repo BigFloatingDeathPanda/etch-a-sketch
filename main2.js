@@ -93,15 +93,27 @@ function colorDecisionFunction (colorPicker) {
     } else if (colorPicker[1].checked == true) {
         return `hsl(${RANDOM(0, 361)}, ${RANDOM(90, 100)}%, ${RANDOM(40, 60)}%)`;
     } else if (colorPicker[2].checked == true) {
-        return `hsl(${RANDOM(166, 256)}, ${RANDOM(90, 100)}%, ${RANDOM(25, 76)}%)`;
+        return `hsl(${RANDOM(180, 240)}, ${RANDOM(90, 100)}%, ${RANDOM(25, 76)}%)`;
     } else if (colorPicker[3].checked == true) {
         return `hsl(${RANDOM(25, 39)}, ${RANDOM(95, 100)}%, ${RANDOM(45, 55)}%)`;
     } else if (colorPicker[4].checked == true) {
         return `hsl(${RANDOM(300, 340)}, ${RANDOM(60, 100)}%, ${RANDOM(80, 100)}%)`;
     } else if (colorPicker[5].checked == true) {
         return `hsl(${RANDOM(0, 360)}, 0%, ${RANDOM(0, 100)}%)`;
-    };
-}
+    } else if (colorPicker[6].checked == true) {
+        return `hsl(${RANDOM(47, 65)}, 100%, ${RANDOM(48, 52)}%)`;
+    } else if (colorPicker[7].checked == true) {
+        return `hsl(${RANDOM(85, 141)}, ${RANDOM(32, 101)}%, ${RANDOM(24, 67)}%)`;
+    } else if (colorPicker[8].checked == true) {
+        return `hsl(${RANDOM(0, 19)}, ${RANDOM(95, 101)}%, ${RANDOM(45, 56)}%)`;
+    } else if (colorPicker[9].checked == true) {
+        return `hsl(${RANDOM(0, 50)}, ${RANDOM(95, 101)}%, 50%)`;
+    } else if (colorPicker[10].checked == true) {
+        return `hsl(${RANDOM(140, 310)}, ${RANDOM(95, 101)}%, ${RANDOM(45, 56)}%)`;
+    } else if (colorPicker[11].checked == true) {
+        return `hsl(${RANDOM(0, 361)}, 100%, ${RANDOM(85, 90)}%)`;
+    }
+};
 
 
 
