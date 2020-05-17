@@ -112,6 +112,8 @@ function colorDecisionFunction (colorPicker) {
         return `hsl(${RANDOM(140, 310)}, ${RANDOM(95, 101)}%, ${RANDOM(45, 56)}%)`;
     } else if (colorPicker[11].checked == true) {
         return `hsl(${RANDOM(0, 361)}, 100%, ${RANDOM(85, 90)}%)`;
+    } else if (colorPicker[12].checked == true) {
+        return `hsl(0, 0%, 100}%)`;
     }
 };
 
