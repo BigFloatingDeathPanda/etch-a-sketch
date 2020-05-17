@@ -26,9 +26,12 @@ const clickButton = document.getElementById("resetButton").addEventListener("cli
 function runResetFunction() {
     const gridContainer = document.getElementById("gridContainer");
     gridContainer.innerHTML = " ";
-    const newWidth = document.getElementById("boxwidth").value;
-    const newHeight = document.getElementById("boxheight").value;
-    createGrid(newHeight, newWidth);
+    let newWidth = document.getElementById("boxwidth").value;
+    if (newWidth == 0) {
+        newWidth = 40;
+    }
+    //const newHeight = document.getElementById("boxheight").value;
+    createGrid(newWidth, newWidth);
     runSwitchColor();
 
 
