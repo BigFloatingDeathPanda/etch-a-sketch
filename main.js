@@ -28,16 +28,13 @@ function runResetFunction() {
     gridContainer.innerHTML = " ";
     let newWidth = document.getElementById("boxwidth").value;
     if (newWidth == 0) {
-        newWidth = 40;
+        newWidth = 20;
     }
+    //Uncomment this to make a non-square grid.
+    //change createGrid(newHeight, newWidth);
     //const newHeight = document.getElementById("boxheight").value;
     createGrid(newWidth, newWidth);
-    runSwitchColor();
-
-
-
-
-    
+    runSwitchColor();    
 }
 
 
@@ -63,6 +60,15 @@ function runSwitchColor() {
        //     switchColor[i].removeEventListener("mouseover", ());
        // };
         
+       //All of these here comments were to try to get the 
+       //classChanger function below to work.  I still don't quite
+       // understand how to convert from arrow notation to a literal 
+       // function.  Maybe I'll come back to this project when I do.
+       // Note, above, with the "if" statement - I need to remove the event listener
+       // of whatever input type I'm not using.  removeEventListener only
+       // works with literal functions, not anonymous ones.
+       // Anyway.  classChanger() does not currently fucntion as it should.
+       // instead it changes all the classes to mouseover.
         
         //console.log(switchColor[i]);
         //switchColor[i].addEventListener("click", classChanger(i, switchColor));
@@ -82,7 +88,7 @@ function classChanger(i, switchColor) {
 };
 
 
-createGrid(10, 10); 
+createGrid(20, 20); 
 runSwitchColor();
 
 const radioListener = document.getElementsByName("inputType");

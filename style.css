@@ -33,7 +33,6 @@ footer {
     flex-direction: column;
     justify-content: center;
     height: 100%
-
 }
 
 .empty {
@@ -51,7 +50,7 @@ footer {
 }
 
 header {
-    background-color: azure;
+    background-color: lightskyblue;
     font-size: 2em;
     font-weight: bold;
     width: 100%;
