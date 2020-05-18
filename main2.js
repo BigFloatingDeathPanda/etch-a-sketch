@@ -1,27 +1,22 @@
 function createGrid(GridRows, GridColumns) {
-
     let gridContainer = document.getElementById("gridContainer");
 
     for (let i = 1; i<=GridRows; i++) {
         const divRow = document.createElement("div");
         divRow.setAttribute("id", "row");
-        //divRow.classList.add("row");
     
         for (let j = 1; j<=GridColumns; j++) {
             const divCol = document.createElement("div");
-            //divCol.textContent = `r${i}, c${j}`;
-            //divCol.classList.add("column");
             divCol.classList.remove("mouseover");
             divCol.classList.add("empty");
             divRow.appendChild(divCol);
-
         }
     gridContainer.appendChild(divRow);
     }
     return;
 };
 
-const clickButton = document.getElementById("resetButton").addEventListener("click", runResetFunction);
+const pushResetButton = document.getElementById("resetButton").addEventListener("click", runResetFunction);
 
 function runResetFunction() {
     const gridContainer = document.getElementById("gridContainer");
@@ -42,9 +37,6 @@ function RANDOM(lower, upper) {
     return Math.floor(Math.random()*(upper - lower) + lower);//.toString(16).toUpperCase();
 };
 
-
-
-
 function runSwitchColor(switchColor) {
     //let switchColor = document.querySelectorAll(".empty");
     
@@ -55,7 +47,7 @@ function runSwitchColor(switchColor) {
         inputType = "click";
     }    
 
-    let colorPicker = document.getElementsByName("colorType");
+    let colorPicker = document.getElementsByName("colorType");  //Selects radio color, passes it to background color below
 
     for (let i = 0; i<switchColor.length; i++) {
         
@@ -76,54 +68,55 @@ function runSwitchColor(switchColor) {
        // instead it changes all the classes to mouseover.
         
         //console.log(switchColor[i]);
-        //switchColor[i].addEventListener("click", classChanger(i, switchColor));
-        
+       // switchColor[i].addEventListener("mouseover", classChanger(i, switchColor));
+
+       
         switchColor[i].addEventListener(inputType, () => {
             switchColor[i].classList.remove("empty");
             switchColor[i].classList.add("mouseover");
             switchColor[i].style.cssText = `background-color: ${colorDecisionFunction(colorPicker)}`;
-
         });
     };
 };
 
+
+
 function colorDecisionFunction (colorPicker) {
-    if (colorPicker[0].checked == true) {
+    if (colorPicker[0].checked == true) { //Black
         return `black`;
-    } else if (colorPicker[1].checked == true) {
+    } else if (colorPicker[1].checked == true) { //Rainbow
         return `hsl(${RANDOM(0, 361)}, ${RANDOM(90, 100)}%, ${RANDOM(40, 60)}%)`;
-    } else if (colorPicker[2].checked == true) {
-        return `hsl(${RANDOM(180, 240)}, ${RANDOM(90, 100)}%, ${RANDOM(25, 76)}%)`;
-    } else if (colorPicker[3].checked == true) {
-        return `hsl(${RANDOM(25, 39)}, ${RANDOM(95, 100)}%, ${RANDOM(45, 55)}%)`;
-    } else if (colorPicker[4].checked == true) {
+    } else if (colorPicker[2].checked == true) { //Blueish
+            return `hsl(${RANDOM(195, 206)}, ${RANDOM(90, 101)}%, ${RANDOM(15, 96)}%)`;
+    } else if (colorPicker[3].checked == true) { //Orangish
+        return `hsl(${RANDOM(28, 32)}, ${RANDOM(96, 101)}%, ${RANDOM(35, 96)}%)`;
+    } else if (colorPicker[4].checked == true) { //Pinkish
         return `hsl(${RANDOM(300, 340)}, ${RANDOM(60, 100)}%, ${RANDOM(80, 100)}%)`;
-    } else if (colorPicker[5].checked == true) {
+    } else if (colorPicker[5].checked == true) { //Grayscale
         return `hsl(${RANDOM(0, 360)}, 0%, ${RANDOM(0, 100)}%)`;
-    } else if (colorPicker[6].checked == true) {
+    } else if (colorPicker[6].checked == true) { //Yellow
         return `hsl(${RANDOM(47, 65)}, 100%, ${RANDOM(48, 52)}%)`;
-    } else if (colorPicker[7].checked == true) {
+    } else if (colorPicker[7].checked == true) { //Green
         return `hsl(${RANDOM(85, 141)}, ${RANDOM(32, 101)}%, ${RANDOM(24, 67)}%)`;
-    } else if (colorPicker[8].checked == true) {
+    } else if (colorPicker[8].checked == true) { //Red
         return `hsl(${RANDOM(0, 19)}, ${RANDOM(95, 101)}%, ${RANDOM(45, 56)}%)`;
-    } else if (colorPicker[9].checked == true) {
+    } else if (colorPicker[9].checked == true) { //Warm
         return `hsl(${RANDOM(0, 50)}, ${RANDOM(95, 101)}%, 50%)`;
-    } else if (colorPicker[10].checked == true) {
+    } else if (colorPicker[10].checked == true) { //Cold
         return `hsl(${RANDOM(140, 310)}, ${RANDOM(95, 101)}%, ${RANDOM(45, 56)}%)`;
-    } else if (colorPicker[11].checked == true) {
+    } else if (colorPicker[11].checked == true) { //Pastel
         return `hsl(${RANDOM(0, 361)}, 100%, ${RANDOM(85, 90)}%)`;
-    } else if (colorPicker[12].checked == true) {
+    } else if (colorPicker[12].checked == true) { //White-Eraser
         return `hsl(0, 0%, 100}%)`;
     }
 };
 
-
-
+//This function was designed to get rid of arrow notation.  Its not working.
 function classChanger(i, switchColor) {
-    console.log(switchColor[i]);
+    //console.log(switchColor[i]);
     switchColor[i].classList.remove("empty");
     switchColor[i].classList.add("mouseover");
-    return switchColor[i].classList;
+    return switchColor;
 };
 
 
