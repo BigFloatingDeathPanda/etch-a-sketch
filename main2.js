@@ -30,6 +30,11 @@ function runResetFunction() {
     //const newHeight = document.getElementById("boxheight").value;
     createGrid(newWidth, newWidth);
     switchColor = document.querySelectorAll(".empty");
+    
+    for (let i = 0; i < switchColor.length; i++) {
+        switchColor[i].style.backgroundColor = `rgba(255, 255, 255, 1)`;
+    }
+
     runSwitchColor(switchColor);    
 }
 
@@ -74,16 +79,16 @@ function runSwitchColor(switchColor) {
         switchColor[i].addEventListener(inputType, () => {
             switchColor[i].classList.remove("empty");
             switchColor[i].classList.add("mouseover");
-            switchColor[i].style.cssText = `background-color: ${colorDecisionFunction(colorPicker)}`;
+            switchColor[i].style.cssText = `background-color: ${colorDecisionFunction(colorPicker, i)}`;
         });
     };
 };
 
 
 let hueAdd = 0;
-let lightRemove = 105;
+let lightRemove = 8;
 
-function colorDecisionFunction (colorPicker) {
+function colorDecisionFunction (colorPicker, i) {
     if (colorPicker[0].checked == true) { //Black
         return `black`;
     } else if (colorPicker[1].checked == true) { //Rainbow
@@ -129,7 +134,64 @@ function colorDecisionFunction (colorPicker) {
             console.log(H);
         } while (H > 40 && H < 295);
         return `hsl(${H}, ${RANDOM(86, 101)}%, ${RANDOM(45, 60)}%)`;
+    } else if (colorPicker[19].checked == true) { //Spring
+        //runResetFunction();
+        let currentShade = switchColor[i].style.backgroundColor.replace(`rgb(`, ``).replace(`)`, ``).split(", ");
+        console.log(`BORK ${currentShade}`);
+        let currentShadeR = currentShade[0];
+        console.log(`R: ${currentShadeR}`);
+
+        if (currentShade == "black") {
+            return `black`;
+        }
+
+        if (currentShadeR == "") {
+            currentShadeR = 255;
+        }// else {
+            currentShadeR = (currentShadeR - lightRemove);
+        //}
+
+        if (currentShadeR <= 0) {
+            currentShadeR = 0;
+        }
+        
+        //let currentShadeG = (switchColor[i].style.backgroundColor);
+        let currentShadeG = currentShade[1];
+        console.log(`G: ${currentShadeG}`);
+        if (currentShadeG == undefined) {
+            currentShadeG = 255;
+        } //else {
+            currentShadeG = (currentShadeG - lightRemove);
+        //}
+
+        if (currentShadeG <= 0) {
+            currentShadeG = 0;
+        }
+
+        //let currentShadeB = (switchColor[i].style.backgroundColor.replace(`rgb(`, ``).split(", ")[2]);
+        let currentShadeB = currentShade[2];
+        console.log(`B: ${currentShadeB}`);
+        if (currentShadeB == undefined) {
+            currentShadeB = 255;
+        } //else {
+            currentShadeB = (currentShadeB - lightRemove);
+        //}
+
+        if (currentShadeB <= 0) {
+            currentShadeB = 0;
+        }
+
+
+
+
+        console.log((`Current Shade: ${currentShadeR}`));
+        console.log(`Light Remove: ${lightRemove}`);
+        return `rgba(${currentShadeR}, ${currentShadeG}, ${currentShadeB}, 1)`;
+
+        //return `hsl(0, 0%, ${lightRemove}%)`;
     }
+
+
 };
 
 //This function was designed to get rid of arrow notation.  Its not working.
