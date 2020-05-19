@@ -81,6 +81,7 @@ function runSwitchColor(switchColor) {
 
 
 let hueAdd = 0;
+let lightRemove = 105;
 
 function colorDecisionFunction (colorPicker) {
     if (colorPicker[0].checked == true) { //Black
@@ -90,7 +91,7 @@ function colorDecisionFunction (colorPicker) {
     } else if (colorPicker[2].checked == true) { //Blueish
             return `hsl(${RANDOM(195, 206)}, ${RANDOM(90, 101)}%, ${RANDOM(15, 96)}%)`;
     } else if (colorPicker[3].checked == true) { //Orangish
-        return `hsl(${RANDOM(28, 32)}, ${RANDOM(96, 101)}%, ${RANDOM(35, 96)}%)`;
+        return `hsl(${RANDOM(19, 32)}, ${RANDOM(96, 101)}%, ${RANDOM(48, 53)}%)`;
     } else if (colorPicker[4].checked == true) { //Pinkish
         return `hsl(${RANDOM(300, 340)}, ${RANDOM(60, 100)}%, ${RANDOM(80, 100)}%)`;
     } else if (colorPicker[5].checked == true) { //Grayscale
@@ -100,7 +101,7 @@ function colorDecisionFunction (colorPicker) {
     } else if (colorPicker[7].checked == true) { //Green
         return `hsl(${RANDOM(85, 141)}, ${RANDOM(32, 101)}%, ${RANDOM(24, 67)}%)`;
     } else if (colorPicker[8].checked == true) { //Red
-        return `hsl(${RANDOM(0, 19)}, ${RANDOM(95, 101)}%, ${RANDOM(45, 56)}%)`;
+        return `hsl(${RANDOM(-2, 15)}, ${RANDOM(95, 101)}%, ${RANDOM(24, 53)}%)`;
     } else if (colorPicker[9].checked == true) { //Warm
         return `hsl(${RANDOM(0, 50)}, ${RANDOM(95, 101)}%, 50%)`;
     } else if (colorPicker[10].checked == true) { //Cold
@@ -115,7 +116,11 @@ function colorDecisionFunction (colorPicker) {
     } else if (colorPicker[14].checked == true) { //Dark Rainbow
         hueAdd += 1;
         return `hsl(${hueAdd}, 100%, 30%)`;
-    }
+    } //else if (colorPicker[15].checked == true) { //Dark Rainbow
+      //  lightRemove -= 5;
+      //  if (lightRemove < 0) {lightRemove = 0};
+      //  return `hsl(${hueAdd}, 100%, ${lightRemove}%)`;
+    //}
 };
 
 //This function was designed to get rid of arrow notation.  Its not working.
