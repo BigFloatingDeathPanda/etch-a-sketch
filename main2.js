@@ -80,6 +80,7 @@ function runSwitchColor(switchColor) {
 };
 
 
+let hueAdd = 0;
 
 function colorDecisionFunction (colorPicker) {
     if (colorPicker[0].checked == true) { //Black
@@ -108,6 +109,12 @@ function colorDecisionFunction (colorPicker) {
         return `hsl(${RANDOM(0, 361)}, 100%, ${RANDOM(85, 90)}%)`;
     } else if (colorPicker[12].checked == true) { //White-Eraser
         return `hsl(0, 0%, 100}%)`;
+    } else if (colorPicker[13].checked == true) { //Bright Rainbow
+        hueAdd += 1;
+        return `hsl(${hueAdd}, 100%, 60%)`;
+    } else if (colorPicker[14].checked == true) { //Dark Rainbow
+        hueAdd += 1;
+        return `hsl(${hueAdd}, 100%, 30%)`;
     }
 };
 
