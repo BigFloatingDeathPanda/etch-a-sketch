@@ -86,7 +86,7 @@ function runSwitchColor(switchColor) {
 
 
 let hueAdd = 0;
-let lightRemove = 8;
+let lightRemove = 12;
 
 function colorDecisionFunction (colorPicker, i) {
     if (colorPicker[0].checked == true) { //Black
@@ -127,71 +127,108 @@ function colorDecisionFunction (colorPicker, i) {
         return `hsl(${RANDOM(180, 220)}, ${RANDOM(98, 101)}%, ${RANDOM(65, 96)}%)`;
     } else if (colorPicker[17].checked == true) { //Spring
         return `hsl(${RANDOM(47, 141)}, ${RANDOM(98, 101)}%, ${RANDOM(50, 92)}%)`;
-    } else if (colorPicker[18].checked == true) { //Summer
-        let H;
+    
+    } else if (colorPicker[18].checked == true) { //Lighten
+        
+        let currentShade = switchColor[i].style.backgroundColor.replace(`rgb(`, ``).replace(`)`, ``).split(", ");
+
+        if (currentShade == "white") {
+            return `white`;
+        }
+
+        console.log(`BORK ${currentShade}`);
+               
+        let currentShadeR = currentShade[0];
+        console.log(`R: ${currentShadeR}`);
+
+        if (currentShadeR == "") {
+            currentShadeR = 255;
+        }
+        currentShadeR = (Number(currentShadeR) + lightRemove);
+        
+        if (currentShadeR >= 255) {
+            currentShadeR = 255;
+        }
+        
+        
+        let currentShadeG = currentShade[1];
+        console.log(`G: ${currentShadeG}`);
+
+        if (currentShadeG == undefined) {
+            currentShadeG = 255;
+        } 
+        currentShadeG = (Number(currentShadeG) + lightRemove);
+        
+        if (currentShadeG >= 255) {
+            currentShadeG = 255;
+        }
+
+        let currentShadeB = currentShade[2];
+        console.log(`B: ${currentShadeB}`);
+
+        if (currentShadeB == undefined) {
+            currentShadeB = 255;
+        }
+        currentShadeB = (Number(currentShadeB) + lightRemove);
+        
+        if (currentShadeB >= 255) {
+            currentShadeB = 255;
+        }
+
+        return `rgba(${currentShadeR}, ${currentShadeG}, ${currentShadeB}, 1)`;
+
+ 
+ /* This color used to be "summer" but I didn't like it and couldn't distinguish it from "warm pallet"
+      let H;
         do {
             H = RANDOM(0, 360);
             console.log(H);
         } while (H > 40 && H < 295);
         return `hsl(${H}, ${RANDOM(86, 101)}%, ${RANDOM(45, 60)}%)`;
-    } else if (colorPicker[19].checked == true) { //Spring
-        //runResetFunction();
+ */   
+    } else if (colorPicker[19].checked == true) { //Darken
         let currentShade = switchColor[i].style.backgroundColor.replace(`rgb(`, ``).replace(`)`, ``).split(", ");
-        console.log(`BORK ${currentShade}`);
-        let currentShadeR = currentShade[0];
-        console.log(`R: ${currentShadeR}`);
 
         if (currentShade == "black") {
             return `black`;
         }
 
+        console.log(`BORK ${currentShade}`);
+               
+        let currentShadeR = currentShade[0];
+        
         if (currentShadeR == "") {
             currentShadeR = 255;
-        }// else {
-            currentShadeR = (currentShadeR - lightRemove);
-        //}
-
+        }
+        currentShadeR = (currentShadeR - lightRemove);
+        
         if (currentShadeR <= 0) {
             currentShadeR = 0;
         }
         
-        //let currentShadeG = (switchColor[i].style.backgroundColor);
+        
         let currentShadeG = currentShade[1];
-        console.log(`G: ${currentShadeG}`);
         if (currentShadeG == undefined) {
             currentShadeG = 255;
-        } //else {
-            currentShadeG = (currentShadeG - lightRemove);
-        //}
-
+        } 
+        currentShadeG = (currentShadeG - lightRemove);
+        
         if (currentShadeG <= 0) {
             currentShadeG = 0;
         }
 
-        //let currentShadeB = (switchColor[i].style.backgroundColor.replace(`rgb(`, ``).split(", ")[2]);
         let currentShadeB = currentShade[2];
-        console.log(`B: ${currentShadeB}`);
         if (currentShadeB == undefined) {
             currentShadeB = 255;
-        } //else {
-            currentShadeB = (currentShadeB - lightRemove);
-        //}
-
+        }
+        currentShadeB = (currentShadeB - lightRemove);
+        
         if (currentShadeB <= 0) {
             currentShadeB = 0;
         }
 
-
-
-
-        console.log((`Current Shade: ${currentShadeR}`));
-        console.log(`Light Remove: ${lightRemove}`);
         return `rgba(${currentShadeR}, ${currentShadeG}, ${currentShadeB}, 1)`;
-
-        //return `hsl(0, 0%, ${lightRemove}%)`;
     }
-
-
 };
 
 //This function was designed to get rid of arrow notation.  Its not working.
