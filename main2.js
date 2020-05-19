@@ -187,6 +187,8 @@ function colorDecisionFunction (colorPicker, i) {
         return `hsl(${H}, ${RANDOM(86, 101)}%, ${RANDOM(45, 60)}%)`;
  */   
     } else if (colorPicker[19].checked == true) { //Darken
+
+        //Yeah this line right here, man.  What a mess.  Good luck following that one, future self!
         let currentShade = switchColor[i].style.backgroundColor.replace(`rgb(`, ``).replace(`)`, ``).split(", ");
 
         if (currentShade == "black") {
