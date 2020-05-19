@@ -5,7 +5,7 @@ html {
 
 footer {
     margin: auto;
-    display: block;
+    display: none;
     font-size: 10px;
     position: absolute;
     bottom: 0px;
