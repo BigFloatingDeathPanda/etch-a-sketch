@@ -105,7 +105,7 @@ function colorDecisionFunction (colorPicker) {
     } else if (colorPicker[9].checked == true) { //Warm
         return `hsl(${RANDOM(0, 50)}, ${RANDOM(95, 101)}%, 50%)`;
     } else if (colorPicker[10].checked == true) { //Cold
-        return `hsl(${RANDOM(140, 310)}, ${RANDOM(95, 101)}%, ${RANDOM(45, 56)}%)`;
+        return `hsl(${RANDOM(155, 295)}, ${RANDOM(95, 101)}%, ${RANDOM(45, 76)}%)`;
     } else if (colorPicker[11].checked == true) { //Pastel
         return `hsl(${RANDOM(0, 361)}, 100%, ${RANDOM(85, 90)}%)`;
     } else if (colorPicker[12].checked == true) { //White-Eraser
@@ -116,11 +116,20 @@ function colorDecisionFunction (colorPicker) {
     } else if (colorPicker[14].checked == true) { //Dark Rainbow
         hueAdd += 1;
         return `hsl(${hueAdd}, 100%, 30%)`;
-    } //else if (colorPicker[15].checked == true) { //Dark Rainbow
-      //  lightRemove -= 5;
-      //  if (lightRemove < 0) {lightRemove = 0};
-      //  return `hsl(${hueAdd}, 100%, ${lightRemove}%)`;
-    //}
+    } else if (colorPicker[15].checked == true) { //Fall
+        return `hsl(${RANDOM(10, 46)}, ${RANDOM(95, 101)}%, ${RANDOM(21, 67)}%)`;
+    } else if (colorPicker[16].checked == true) { //Winter
+        return `hsl(${RANDOM(180, 220)}, ${RANDOM(98, 101)}%, ${RANDOM(65, 96)}%)`;
+    } else if (colorPicker[17].checked == true) { //Spring
+        return `hsl(${RANDOM(47, 141)}, ${RANDOM(98, 101)}%, ${RANDOM(50, 92)}%)`;
+    } else if (colorPicker[18].checked == true) { //Summer
+        let H;
+        do {
+            H = RANDOM(0, 360);
+            console.log(H);
+        } while (H > 40 && H < 295);
+        return `hsl(${H}, ${RANDOM(86, 101)}%, ${RANDOM(45, 60)}%)`;
+    }
 };
 
 //This function was designed to get rid of arrow notation.  Its not working.
