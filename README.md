@@ -1,6 +1,6 @@
 Etch-a-Sketch Work in Progress
 
-TODO (Probably need to know more): Make Auto / Click buttons function correctly.
+TODO: Make Auto / Click buttons function correctly.  I can change the code directly to have it be all-auto or all-click, but I can't seem to get the toggle switch down just yet.
 
 THOUGHTS:
 
